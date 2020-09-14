@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:background="@drawable/btn_white_bg" />
+        android:background="@drawable/et_white_bg" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"

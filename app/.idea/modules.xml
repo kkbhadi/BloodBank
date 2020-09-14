@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/85527062/BloodBankApp.iml" filepath="$PROJECT_DIR$/.idea/modules/85527062/BloodBankApp.iml" group="BloodBankApp" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/BloodBankApp-app.iml" filepath="$PROJECT_DIR$/.idea/modules/BloodBankApp-app.iml" group="BloodBankApp/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1468107512/BloodBankMain-BloodBankApp.iml" filepath="$PROJECT_DIR$/.idea/modules/1468107512/BloodBankMain-BloodBankApp.iml" group="BloodBankApp" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app.iml" group="BloodBankApp/app" />
+    </modules>
+  </component>
+</project>
