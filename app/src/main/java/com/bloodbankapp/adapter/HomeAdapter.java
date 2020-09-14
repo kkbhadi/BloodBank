@@ -14,7 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bloodbankapp.R;
-import com.bloodbankapp.models.Doner;
+import com.bloodbankapp.models.Donor;
 import com.bloodbankapp.ui.UserDetailActivity;
 import com.squareup.picasso.Picasso;
 
@@ -23,9 +23,9 @@ import java.util.List;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> {
-    List<Doner> donorList;
+    List<Donor> donorList;
 
-    public HomeAdapter(List<Doner> donorList) {
+    public HomeAdapter(List<Donor> donorList) {
         this.donorList = donorList;
     }
 
@@ -40,7 +40,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull final MyViewHolder holder, int position) {
 
-        final Doner doner = donorList.get(position);
+        final Donor doner = donorList.get(position);
 
         holder.bindData(doner);
 
@@ -78,7 +78,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
             civProfile = itemView.findViewById(R.id.civProfile);
         }
 
-        public void bindData(Doner doner) {
+        public void bindData(Donor doner) {
             tvName.setText(doner.getName());
             tvBloodGroup.setText(doner.getBloodGroup());
             Picasso.with(itemView.getContext())

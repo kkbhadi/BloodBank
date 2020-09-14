@@ -11,7 +11,7 @@ import androidx.annotation.Nullable;
 import com.bloodbankapp.R;
 import com.bloodbankapp.firebase.FirebaseNetworkCallback;
 import com.bloodbankapp.firebase.FirebaseRepository;
-import com.bloodbankapp.models.Doner;
+import com.bloodbankapp.models.Donor;
 import com.bloodbankapp.pref.SharedPrefUtil;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -73,10 +73,10 @@ public class LoginActivity extends BaseActivity {
                                 public void onSuccess(Object data) {
                                     // save profile and move to home screen
                                     // hide loader
-                                    Doner doner = (Doner) data;
+                                    Donor donor = (Donor) data;
                                     rlProgress.setVisibility(View.GONE);
-                                    sharedPrefUtil.saveDonerProfile(doner);
-                                    sharedPrefUtil.saveId(doner.getDonerId());
+                                    sharedPrefUtil.saveDonorProfile(donor);
+                                    sharedPrefUtil.saveId(donor.getDonorId());
                                     navigateToHomeScreen();
 
                                 }

@@ -4,7 +4,7 @@ package com.bloodbankapp.pref;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.bloodbankapp.models.Doner;
+import com.bloodbankapp.models.Donor;
 import com.google.gson.Gson;
 
 import static android.content.Context.MODE_PRIVATE;
@@ -22,9 +22,9 @@ public  class SharedPrefUtil {
         mPreferences = context.getSharedPreferences(sharedPrefFile, MODE_PRIVATE);
     }
 
-    public void saveDonerProfile(Doner doner) {
-        String donerJson = new Gson().toJson(doner);
-        mPreferences.edit().putString(USER_PROFILE, donerJson).apply();
+    public void saveDonorProfile(Donor donor) {
+        String donorJson = new Gson().toJson(donor);
+        mPreferences.edit().putString(USER_PROFILE, donorJson).apply();
     }
 
     public void saveId(String id) {
@@ -35,14 +35,14 @@ public  class SharedPrefUtil {
         return mPreferences.getString(USER_ID, "");
     }
 
-    public Doner fetchDonerProfile(Doner doner) {
-        Doner userProfile;
-        String donerJson = mPreferences.getString(USER_PROFILE, "");
-        assert donerJson != null;
-        if (!donerJson.isEmpty()) {
-            userProfile = new Gson().fromJson(donerJson, Doner.class);
+    public Donor fetchDonorProfile(Donor donor) {
+        Donor userProfile;
+        String donorJson = mPreferences.getString(USER_PROFILE, "");
+        assert donorJson != null;
+        if (!donorJson.isEmpty()) {
+            userProfile = new Gson().fromJson(donorJson, Donor.class);
         } else {
-            userProfile = new Doner();
+            userProfile = new Donor();
         }
         return userProfile;
     }

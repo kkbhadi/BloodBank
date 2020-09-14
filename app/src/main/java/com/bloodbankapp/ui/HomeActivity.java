@@ -19,7 +19,7 @@ import com.bloodbankapp.R;
 import com.bloodbankapp.adapter.HomeAdapter;
 import com.bloodbankapp.firebase.FirebaseNetworkCallback;
 import com.bloodbankapp.firebase.FirebaseRepository;
-import com.bloodbankapp.models.Doner;
+import com.bloodbankapp.models.Donor;
 import com.bloodbankapp.pref.SharedPrefUtil;
 
 import java.util.List;
@@ -53,7 +53,7 @@ public class HomeActivity extends BaseActivity {
         sharedPrefUtil = new SharedPrefUtil(this);
 
         // get doner lists
-        getDonerList();
+        getDonorList();
 
 
     }
@@ -72,20 +72,20 @@ public class HomeActivity extends BaseActivity {
         return true;
     }
 
-    public void getDonerList() {
+    public void getDonorList() {
         // show loader
         rlProgress.setVisibility(View.VISIBLE);
-        repository.getDonerList(new FirebaseNetworkCallback() {
+        repository.getDonorList(new FirebaseNetworkCallback() {
             @Override
             public void onSuccess(Object data) {
                 // hide loader
                 rlProgress.setVisibility(View.GONE);
-                List<Doner> donerList = (List<Doner>) data;
+                List<Donor> donorList = (List<Donor>) data;
 
-                if (donerList.isEmpty()) {
+                if (donorList.isEmpty()) {
                     findViewById(R.id.rlNoData).setVisibility(View.VISIBLE);
                 } else {
-                    mAdapter = new HomeAdapter(donerList);
+                    mAdapter = new HomeAdapter(donorList);
                     recyclerView.setAdapter(mAdapter);
                 }
             }

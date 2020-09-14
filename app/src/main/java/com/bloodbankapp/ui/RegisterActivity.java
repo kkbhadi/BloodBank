@@ -18,7 +18,7 @@ import androidx.annotation.Nullable;
 import com.bloodbankapp.R;
 import com.bloodbankapp.firebase.FirebaseNetworkCallback;
 import com.bloodbankapp.firebase.FirebaseRepository;
-import com.bloodbankapp.models.Doner;
+import com.bloodbankapp.models.Donor;
 import com.bloodbankapp.pref.SharedPrefUtil;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -137,31 +137,31 @@ public class RegisterActivity extends BaseActivity {
             repository.signUpUser(etEmail.getText().toString().trim(), etPass.getText().toString().trim(), new FirebaseNetworkCallback() {
                 @Override
                 public void onSuccess(Object data) {
-                    final Doner doner = new Doner();
-                    doner.setAddress(etAddress.getText().toString().trim());
-                    doner.setEmail(etEmail.getText().toString().trim());
-                    doner.setName(etName.getText().toString().trim());
+                    final Donor donor = new Donor();
+                    donor.setAddress(etAddress.getText().toString().trim());
+                    donor.setEmail(etEmail.getText().toString().trim());
+                    donor.setName(etName.getText().toString().trim());
 
                     if (!etNumber.getText().toString().trim().isEmpty())
-                        doner.setPhone(Long.parseLong(etNumber.getText().toString().trim()));
-                    doner.setCity(etCity.getText().toString().trim());
-                    doner.setDonerId(((FirebaseUser) data).getUid());
-                    doner.setAddress(etAddress.getText().toString().trim());
+                        donor.setPhone(Long.parseLong(etNumber.getText().toString().trim()));
+                    donor.setCity(etCity.getText().toString().trim());
+                    donor.setDonorId(((FirebaseUser) data).getUid());
+                    donor.setAddress(etAddress.getText().toString().trim());
                     if (checkBox.isChecked() && !selectedBloodGroup.isEmpty()) {
-                        doner.setBloodGroup(selectedBloodGroup);
-                        doner.setDoner(true);
+                        donor.setBloodGroup(selectedBloodGroup);
+                        donor.setDonor(true);
                     }
 
                     // now store user info in db.
-                    repository.saveUserData(doner, new FirebaseNetworkCallback() {
+                    repository.saveUserData(donor, new FirebaseNetworkCallback() {
                         @Override
                         public void onSuccess(Object data) {
                             // hide loader
                             rlProgress.setVisibility(View.GONE);
                             // SAVE DATA in Prefs and move to next Screen
                             showToast("User Registered");
-                            sharedPrefUtil.saveDonerProfile(doner);
-                            sharedPrefUtil.saveId(doner.getDonerId());
+                            sharedPrefUtil.saveDonorProfile(donor);
+                            sharedPrefUtil.saveId(donor.getDonorId());
 
                             navigateToHomeScreen();
 

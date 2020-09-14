@@ -5,7 +5,7 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 
-import com.bloodbankapp.models.Doner;
+import com.bloodbankapp.models.Donor;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -73,12 +73,12 @@ public class FirebaseRepository {
         FirebaseAuth.getInstance().signOut();
     }
 
-    public void saveUserData(final Doner doner, final FirebaseNetworkCallback callback) {
-        DatabaseReference donerNodeReference = database.getReference("Doners");
-        donerNodeReference.child(doner.getDonerId()).setValue(doner).addOnSuccessListener(new OnSuccessListener<Void>() {
+    public void saveUserData(final Donor donor, final FirebaseNetworkCallback callback) {
+        DatabaseReference donorNodeReference = database.getReference("Donors");
+        donorNodeReference.child(donor.getDonorId()).setValue(donor).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
-                callback.onSuccess(doner);
+                callback.onSuccess(donor);
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
@@ -89,13 +89,13 @@ public class FirebaseRepository {
 
     }
 
-    public void fetchUserData(String donerId, final FirebaseNetworkCallback callback) {
-        DatabaseReference ref = database.getReference("Doners").child(donerId);
+    public void fetchUserData(String donorId, final FirebaseNetworkCallback callback) {
+        DatabaseReference ref = database.getReference("Donors").child(donorId);
 
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                callback.onSuccess(snapshot.getValue(Doner.class));
+                callback.onSuccess(snapshot.getValue(Donor.class));
             }
 
             @Override
@@ -105,20 +105,20 @@ public class FirebaseRepository {
         });
     }
 
-    public void getDonerList(final FirebaseNetworkCallback callback) {
-        DatabaseReference donerNodeReference = database.getReference("Doners");
+    public void getDonorList(final FirebaseNetworkCallback callback) {
+        DatabaseReference donorNodeReference = database.getReference("Donors");
 
-        donerNodeReference.addValueEventListener(new ValueEventListener() {
+        donorNodeReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                List<Doner> donarList = new ArrayList<>();
-                for (DataSnapshot doner : snapshot.getChildren()) {
-                    Doner donerObject = doner.getValue(Doner.class);
-                    if (donerObject != null && donerObject.isDoner())
-                        donarList.add(donerObject);
+                List<Donor> donorList = new ArrayList<>();
+                for (DataSnapshot donor : snapshot.getChildren()) {
+                    Donor donorObject = donor.getValue(Donor.class);
+                    if (donorObject != null && donorObject.isDonor())
+                        donorList.add(donorObject);
                 }
-                callback.onSuccess(donarList);
+                callback.onSuccess(donorList);
             }
 
             @Override

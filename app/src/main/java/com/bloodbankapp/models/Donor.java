@@ -2,34 +2,34 @@ package com.bloodbankapp.models;
 
 import java.io.Serializable;
 
-public class Doner implements Serializable {
-    public Doner() {
+public class Donor implements Serializable {
+    public Donor() {
         //to send data in recyclerView
     }
 
     private String name;
-    private String donerId;
+    private String donorId;
     private String email;
     private Long phone;
     private String city;
     private String address;
     private String bloodGroup = "";
-    private boolean isDoner = false;
+    private boolean isDonor = false;
 
-    public boolean isDoner() {
-        return isDoner;
+    public boolean isDonor() {
+        return isDonor;
     }
 
-    public void setDoner(boolean doner) {
-        isDoner = doner;
+    public void setDonor(boolean donor) {
+        isDonor = donor;
     }
 
-    public String getDonerId() {
-        return donerId;
+    public String getDonorId() {
+        return donorId;
     }
 
-    public void setDonerId(String donerId) {
-        this.donerId = donerId;
+    public void setDonorId(String donorId) {
+        this.donorId = donorId;
     }
 
     public String getName() {

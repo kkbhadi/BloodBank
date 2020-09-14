@@ -12,7 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 
 import com.bloodbankapp.R;
-import com.bloodbankapp.models.Doner;
+import com.bloodbankapp.models.Donor;
 
 public class UserDetailActivity extends BaseActivity {
 
@@ -36,7 +36,7 @@ public class UserDetailActivity extends BaseActivity {
 
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
-        Doner model = (Doner) bundle.getSerializable("donor");
+        Donor model = (Donor) bundle.getSerializable("donor");
 
         userBloodGroupName.setText(model.getBloodGroup());
         userAddress.setText(model.getAddress());
