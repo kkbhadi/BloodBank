@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_pink"
+    android:fillViewport="true"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glH55"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="578dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glH30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".08" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glV10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".10" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glV90"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".90" />
+
+        <TextView
+            android:id="@+id/tvHeadingRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/register_form"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="italic|bold"
+            app:layout_constraintBottom_toTopOf="@id/glH30"
+            app:layout_constraintEnd_toEndOf="@id/glV90"
+            app:layout_constraintStart_toStartOf="@id/glV10" />
+
+
+        <EditText
+            android:id="@+id/etEmailRegister"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/btn_white_bg"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:padding="15dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/glV90"
+            app:layout_constraintStart_toStartOf="@+id/glV10"
+            app:layout_constraintTop_toBottomOf="@id/etNameRegister" />
+
+        <EditText
+            android:id="@+id/etNameRegister"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/btn_white_bg"
+            android:hint="@string/your_name"
+            android:inputType="textPersonName"
+            android:padding="15dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/glV90"
+            app:layout_constraintStart_toStartOf="@+id/glV10"
+            app:layout_constraintTop_toBottomOf="@id/glH30" />
+
+        <EditText
+            android:id="@+id/etNumberRgister"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/btn_white_bg"
+            android:hint="@string/mobile_number"
+            android:inputType="phone"
+            android:padding="15dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/glV90"
+            app:layout_constraintStart_toStartOf="@id/glV10"
+            app:layout_constraintTop_toBottomOf="@id/etPasswordRgister" />
+
+        <EditText
+            android:id="@+id/etAAddressRegister"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/btn_white_bg"
+            android:hint="@string/address"
+            android:inputType="textPersonName"
+            android:padding="15dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/glV90"
+            app:layout_constraintStart_toStartOf="@+id/glV10"
+            app:layout_constraintTop_toBottomOf="@id/etCityRgister" />
+
+        <EditText
+            android:id="@+id/etCityRgister"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/btn_white_bg"
+            android:hint="Your City"
+            android:inputType="text"
+            android:padding="15dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/glV90"
+            app:layout_constraintStart_toStartOf="@id/glV10"
+            app:layout_constraintTop_toBottomOf="@id/etNumberRgister" />
+
+
+        <EditText
+            android:id="@+id/etPasswordRgister"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/btn_white_bg"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:padding="15dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/glV90"
+            app:layout_constraintStart_toStartOf="@id/glV10"
+            app:layout_constraintTop_toBottomOf="@id/etEmailRegister" />
+
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@drawable/spinner_bg"
+            android:gravity="center_vertical"
+            android:padding="15dp"
+            android:prompt="@string/hint_select"
+            app:layout_constraintBottom_toTopOf="@id/checkboxRegister"
+            app:layout_constraintEnd_toEndOf="@id/glV90"
+            app:layout_constraintTop_toBottomOf="@id/etAAddressRegister" />
+
+        <ImageView
+            android:id="@+id/dropDown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:src="@drawable/ic_drop_down"
+            app:layout_constraintBottom_toTopOf="@id/checkboxRegister"
+            app:layout_constraintEnd_toEndOf="@id/glV90"
+            app:layout_constraintTop_toBottomOf="@id/etAAddressRegister" />
+
+        <TextView
+            android:id="@+id/bloodGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:padding="15dp"
+            android:text="@string/blood_grp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/checkboxRegister"
+            app:layout_constraintEnd_toStartOf="@id/spinner"
+            app:layout_constraintStart_toStartOf="@id/glV10"
+            app:layout_constraintTop_toBottomOf="@id/etAAddressRegister" />
+
+        <CheckBox
+            android:id="@+id/checkboxRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/i_want_to_be_a_donor"
+            android:textColor="@color/red"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/glH55"
+            app:layout_constraintEnd_toEndOf="@id/glV90"
+            app:layout_constraintStart_toStartOf="@id/glV10"
+            app:layout_constraintTop_toBottomOf="@id/bloodGroup" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSignUpRegister"
+            style="@style/AppTheme"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/GREENY"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="@string/submit"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/glV90"
+            app:layout_constraintStart_toStartOf="@id/glV10"
+            app:layout_constraintTop_toBottomOf="@id/glH55" />
+
+        <RelativeLayout
+            android:id="@+id/rlProgress"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#80000000"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true" />
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
